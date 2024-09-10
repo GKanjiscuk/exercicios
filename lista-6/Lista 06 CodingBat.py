@@ -105,7 +105,10 @@ def apaga(s, n):
 # troca('a') -> 'a'
 # troca('ab') -> 'ba'
 def troca(s):
-  return 
+  if len(s) <= 1:
+    return s
+  else:
+    return s[-1] + s[1:-1] + s[0]
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
