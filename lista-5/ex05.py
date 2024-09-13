@@ -26,7 +26,6 @@ lista = '''213752 216732 221063 221545 225583 229133 230648 233222
 
 def duplas(f):
     for i in range(10):
-        print(i)
         if str(i)+str(i) in f:
             return True
         return False
@@ -42,6 +41,6 @@ for f in lista:
     if not duplas(f) and somapar(f) and f[0]!= f[-1]:
         cont = cont + 1
 
-print(len(f for f in lista
-          if not duplas(f) and somapar(f) and f[0]!= f[-1]))
+print(len([f for f in lista
+          if not duplas(f) and somapar(f) and f[0]!= f[-1]]))
 print(cont)
