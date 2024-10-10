@@ -7,7 +7,11 @@
 # first_last6([6, 1, 2, 3]) -> True
 # first_last6([3, 2, 1]) -> False
 def first_last6(nums): #
-  return
+  if 6 == nums[0] or 6 == nums[-1]:
+    return True
+  else:
+    return False
+  
 
 # B. same_first_last #
 # retorna True se a lista nums
@@ -18,7 +22,10 @@ def first_last6(nums): #
 # same_first_last([1, 2, 3, 1]) -> True
 # same_first_last([1, 2, 1]) -> True
 def same_first_last(nums):
-  return 
+  if len(nums) >= 1 and nums[0] == nums[-1]:
+    return True
+  else:
+    return  False
 
 # C. common_end #
 # Dada duas listas a e b verifica se os dois primeiros são
@@ -30,7 +37,10 @@ def same_first_last(nums):
 # common_end([1, 2, 3], [7, 3, 2]) -> False
 # common_end([1, 2, 3], [1, 3]) -> True
 def common_end(a, b):
-  return 
+  if a[0] == b[0] or a[-1] == b[-1]: 
+    return True 
+  else:
+    return False
 
 # D. maior_ponta #
 # Dada uma lista não vazia, cria uma nova lista onde todos
@@ -39,14 +49,14 @@ def common_end(a, b):
 # maior_ponta([1, 2, 3]) -> [3, 3, 3]
 # maior_ponta([1, 3, 2]) -> [2, 2, 2]
 def maior_ponta(nums):
-  return
+  return [max(nums[0], nums[-1])] * len(nums)
 
 # E. sum2 #
 # Dada uma lista de inteiros de qualquer tamanho
 # retorna a soma dos dois primeiros elementos
 # se a lista tiver menos de dois elementos, soma o que for possível
 def sum2(nums):
-  return 
+  return sum(nums[:2])
 
 # F. middle_way #
 # sejam duas listas de inteiros a e b
@@ -56,7 +66,7 @@ def sum2(nums):
 # middle_way([7, 7, 7], [3, 8, 0]) -> [7, 8]
 # middle_way([5, 2, 9], [1, 4, 5]) -> [2, 4]
 def middle_way(a, b):
-  return 
+  return [a[len(a)//2], b[len(b)//2]]
 
 # G. date_fashion
 # você e sua namorada(o) vão a um restaurante
@@ -73,7 +83,11 @@ def middle_way(a, b):
 # date_fashion(5, 2) -> 0
 # date_fashion(5, 5) -> 1
 def date_fashion(eu, par):
-  return
+  if eu <=2 or par <=2:
+    return 0
+  elif eu >=8 or par >=8:
+    return 2
+  else: return 1
 
 # H. squirrel_play
 # os esquilos na FATEC brincam quando a temperatura está entre 60 e 90
@@ -84,7 +98,7 @@ def date_fashion(eu, par):
 # squirrel_play(95, False) -> False
 # squirrel_play(95, True) -> True
 def squirrel_play(temp, is_summer):
-  return
+  return 60<=temp<=100 if is_summer else 60<=temp<=90
 
 # I. pego_correndo
 # você foi pego correndo
